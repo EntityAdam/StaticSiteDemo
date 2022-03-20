@@ -1,7 +1,7 @@
 public class MyStackConfiguration
 {
     private const string Organization = "entityadam";
-    private const string Application = "blog";
+    private const string Application = "staticsitedemo";
     private const string Environment = "dev";
     public string ResourceGroupName => $"{Organization}-{Application}-{Environment}-rg";
     public string StaticSiteName => $"{Organization}-{Application}-{Environment}-web";

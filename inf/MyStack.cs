@@ -8,7 +8,10 @@ internal sealed class MyStack : Stack
     public MyStack()
     {
         var configuration = new MyStackConfiguration();
-        var resourceGroup = new ResourceGroup(configuration.ResourceGroupName);
+        var resourceGroup = new ResourceGroup(configuration.ResourceGroupName, new ResourceGroupArgs() 
+        {
+            Location = configuration.Location
+        }); 
         var staticSite = new StaticSite(configuration.StaticSiteName, new StaticSiteArgs()
         {
             Branch = configuration.Branch,

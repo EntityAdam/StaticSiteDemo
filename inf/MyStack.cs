@@ -18,7 +18,7 @@ internal sealed class MyStack : Stack
                 AppLocation = configuration.AppFolder,
                 OutputLocation = configuration.AppBuildFolder
             },
-            Location = "eastus",
+            Location = configuration.Location,
             RepositoryToken = configuration.RepositoryToken!,
             RepositoryUrl = configuration.RepositoryUrl,
             ResourceGroupName = configuration.ResourceGroupName,

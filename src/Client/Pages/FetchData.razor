@@ -1,0 +1,45 @@
+﻿@page "/fetchdata"
+@using System.Text.Json.Serialization
+@inject HttpClient Http
+
+<PageTitle>Fetch Pokemon</PageTitle>
+
+<h1>Fetch Pokemon</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (pokemon == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h2>@pokemon.Name </h2>
+    <h5>Weight: @pokemon.Weight </h5>
+    <h5>Height: @pokemon.Height </h5>
+    <img src="@pokemon.Sprites.Front" style="height:300px;" />   
+}
+
+@code {
+    private Pokemon? pokemon { get; set; }
+    private string test {get;set;}
+
+    protected override async Task OnInitializedAsync()
+    {
+        test = await Http.GetStringAsync("http://localhost:7071/api/PokemonService");
+        pokemon = await Http.GetFromJsonAsync<Pokemon>("http://localhost:7071/api/PokemonService");
+    }
+
+    public class Pokemon
+    {
+        public string Name { get; set; }
+        public int Height { get; set; }
+        public int Weight { get; set; }
+        public Sprites Sprites { get; set; }
+
+    }
+    public class Sprites
+    {
+        public string Front { get; set; }
+    }
+}

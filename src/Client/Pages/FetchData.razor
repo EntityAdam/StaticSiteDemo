@@ -22,12 +22,11 @@ else
 
 @code {
     private Pokemon? pokemon { get; set; }
-    private string test {get;set;}
 
     protected override async Task OnInitializedAsync()
     {
-        test = await Http.GetStringAsync("http://localhost:7071/api/PokemonService");
-        pokemon = await Http.GetFromJsonAsync<Pokemon>("http://localhost:7071/api/PokemonService");
+        //localhost call: pokemon = await Http.GetFromJsonAsync<Pokemon>("http://localhost:7071/api/PokemonService");
+        pokemon = await Http.GetFromJsonAsync<Pokemon>("api/PokemonService");
     }
 
     public class Pokemon

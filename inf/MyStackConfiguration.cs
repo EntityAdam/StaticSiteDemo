@@ -13,7 +13,7 @@ public class MyStackConfiguration
     public string AppFolder { get; set; } = @"src/Client";
 
     //Issue: Oryx built the app folder but was unable to determine the location of the app artifacts. Please specify the app artifact location.
-    public string AppBuildFolder { get; set; } = @"src/Client/bin/release/net6.0/wwwroot";
+    public string AppBuildFolder { get; set; } = @"bin/staticsites/ss-oryx/app";
     public string RepositoryUrl { get; set; } = "https://github.com/entityadam/StaticSiteDemo";
     public string? RepositoryToken { get; set; }
 }

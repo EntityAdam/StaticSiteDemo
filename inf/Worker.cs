@@ -42,7 +42,8 @@ internal class Worker : IHostedService
                 BuildProperties = new StaticSiteBuildPropertiesArgs()
                 {
                     ApiLocation = configuration.FunctionsFolder,
-                    AppLocation = configuration.AppFolder
+                    AppLocation = configuration.AppFolder,
+                    OutputLocation = configuration.AppBuildFolder
                 },
                 Location = configuration.Location,
                 RepositoryToken = githubToken,

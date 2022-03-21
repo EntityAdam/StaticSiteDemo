@@ -11,7 +11,9 @@ public class MyStackConfiguration
     public string Location { get; set; } = "eastus2";
     public string FunctionsFolder { get; set; } = @"src/Functions";
     public string AppFolder { get; set; } = @"src/Client";
-    //public string AppBuildFolder { get; set; } = @"src\Client\bin\release\net6.0";
+
+    //Issue: Oryx built the app folder but was unable to determine the location of the app artifacts. Please specify the app artifact location.
+    public string AppBuildFolder { get; set; } = @"src/Client/bin/release/net6.0";
     public string RepositoryUrl { get; set; } = "https://github.com/entityadam/StaticSiteDemo";
     public string? RepositoryToken { get; set; }
 }

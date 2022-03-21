@@ -16,6 +16,7 @@ static IHostBuilder CreateHostBuilder(string[] args) =>
         .ConfigureServices((context, services) =>
         {
             services.AddHostedService<Worker>();
+            services.AddSingleton<IKeyvaultClient, KeyvaultClient>();
         });
 
 
